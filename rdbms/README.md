@@ -23,7 +23,8 @@ With enabled automated backup option for RDS instance it’s possible to restore
     aws rds restore-db-instance-to-point-in-time \
         --source-db-instance-identifier mysourcedbinstance \
         --target-db-instance-identifier mytargetdbinstance \
-        --restore-time 2009-10-14T23:45:00.000Z  ```
+        --restore-time 2009-10-14T23:45:00.000Z  
+    ```
 
     ```--use-latest-restorable-timecan``` can be specified
 
