@@ -43,8 +43,10 @@ With enabled automated backup option for RDS instance it’s possible to restore
 ```
 
 ### PostgreSQL RDS DR solutions
-  Amazon provides only Multi-AZ solution - switchover to replica running on different availability zone. Switchover occurs automatically and downtime usually is around 1-2 minutes. If failover occurs no application/DNS changes required, everything will be changed by amazon (endpoint will be chaged to new instance)
+  Amazon is very limited in DR options and provides only Multi-AZ solution - switchover to replica running on different availability zone. Switchover occurs automatically and downtime usually is around 1-2 minutes. If failover occurs no application/DNS changes required, everything will be changed by amazon (endpoint will be changed to new instance)
 
   Alternatively to guarantee redundancy snapshots can be created ([doc](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html)) and copy ([doc](http://docs.aws.amazon.com//cli/latest/reference/rds/copy-db-snapshot.html)) them to another region.
+
+  Full data export can be configured and scheduled to store dumps on S3. But all data since last run will be lost.
 
   To move data outside of RDS can be configured logical replication based on 3rd party software (https://bucardo.org/wiki/Bucardo). Ideally it’ll require separate server(either amazon EC2 instances or datacenter server or any other service providers). This solution doesn’t guarantee 100% data safe. Some data generated between synchronisations can be lost.
