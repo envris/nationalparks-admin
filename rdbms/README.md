@@ -17,7 +17,7 @@ Notes:
 
 ## FAQ:
 _**Q: What Amazon RDS offers to guarantee data safe?**_   
-**A:** Amazon provides 2 different types to save your data "Automated Backups"(http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html) and "DB Snapshots"(http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html).
+**A:** Amazon provides 2 different types to save your data ["Automated Backups"](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html) and ["DB Snapshots"](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html).
 
 _**Q: What's the difference between "Automated Backup" and "DB Snapshots"?**_   
 **A:** "DB Snapshot" it's a storage volume snapshot(instant) of your DB instance, backing up the entire DB instance and not just individual databases. DB state can be restored ONLY same time when snapshot was created.    
