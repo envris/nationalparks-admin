@@ -15,14 +15,12 @@ Notes:
  * be consice, link don't over-synthesize
 
 
-### FAQ:
+## FAQ:
 _**Q: What Amazon RDS offers to guarantee data safe?**_
-
 **A:** Amazon provides 2 different types to save your data "Automated Backups"(http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html) and "DB Snapshots"(http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html).
 
 
 _**Q: What's the difference between "Automated Backup" and "DB Snapshots"?**_
-
 **A:** "DB Snapshot" it's a storage volume snapshot(instant) of your DB instance, backing up the entire DB instance and not just individual databases. DB state can be restored ONLY same time when snapshot was created.
 "Automated Backup" it's a  continuous process which allows you to restore database anytime in the past and guarantee data safe up to last transaction. It includes daily snapshot + automated WALs(write ahead logs) archiving.
 
@@ -56,7 +54,7 @@ Just do PITR(point in time recovery) for source instance with latest restorable 
 
 
 
-### PostgreSQL RDS point-in-time recovery (PITR):
+## PostgreSQL RDS point-in-time recovery (PITR):
 With enabled automated backup option for RDS instance it’s possible to restore instance anytime in the past (limited by backup retention policy). There are 2 ways to do restoration:
 
 * Using cli (aws command line interface)
@@ -83,7 +81,7 @@ With enabled automated backup option for RDS instance it’s possible to restore
     7. Click the Launch DB Instance button.
 ```
 
-### PostgreSQL RDS DR solutions
+## PostgreSQL RDS DR solutions
   Amazon is very limited in DR options and provides only Multi-AZ solution - switchover to replica running on different availability zone. Switchover occurs automatically and downtime usually is around 1-2 minutes. If failover occurs no application/DNS changes required, everything will be changed by amazon (endpoint will be changed to new instance)
 
   Alternatively to guarantee redundancy snapshots can be created ([doc](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html)) and copy ([doc](http://docs.aws.amazon.com//cli/latest/reference/rds/copy-db-snapshot.html)) them to another region. *All data since last run will be lost*
