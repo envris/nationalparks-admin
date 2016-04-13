@@ -21,7 +21,7 @@ _**Q: What Amazon RDS offers to guarantee data safe?**_
 
 _**Q: What's the difference between "Automated Backup" and "DB Snapshots"?**_   
 **A:** "DB Snapshot" it's a storage volume snapshot(instant) of your DB instance, backing up the entire DB instance and not just individual databases. DB state can be restored ONLY same time when snapshot was created.    
-"Automated Backup" it's a  continuous process which allows you to restore database anytime in the past and guarantee data safe up to last transaction. It includes daily snapshot + automated WALs(write ahead logs) archiving.
+"Automated Backup" it's a  continuous process which allows you to restore database ANYTIME in the past and guarantee data safe up to last transaction. It includes daily snapshot + automated WALs(write ahead logs) archiving.
 
 _**Q: Where does Amazon store backups and snapshots?**_   
 **A:** They are stored in S3.
